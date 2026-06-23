@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, sans-serif;
+  background-color: #f1f4f9;
+}
+
+.app-shell { display: flex; min-height: 100vh; }
+
+/* ---------------- SIDEBAR ---------------- */
+.sidebar {
+  width: 250px;
+  background: #0b1a30;
+  color: #b9c2d0;
+  flex-shrink: 0;
+  padding: 0 0 24px 0;
+}
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 22px 24px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+}
+.sidebar-section-label {
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: .05em;
+  color: #5d6b82;
+  padding: 18px 24px 8px 24px;
+}
+
+.sidebar .tab-parent { border: none !important; }
+.sidebar .tab-container { border: none !important; }
+
+/* Dash Tabs override for sidebar look */
+.sidebar div[id*="tabs"] { border: none !important; }
+.sidebar-tabs .tab {
+  background: transparent !important;
+  border: none !important;
+  color: #b9c2d0 !important;
+  text-align: left !important;
+  padding: 12px 24px !important;
+  font-size: 14.5px !important;
+  border-radius: 0 !important;
+}
+.sidebar-tabs .tab--selected {
+  background: #14253f !important;
+  color: #ffffff !important;
+  border-left: 3px solid #4cc9c0 !important;
+  font-weight: 600 !important;
+}
+
+/* ---------------- MAIN ---------------- */
+.main-area { flex: 1; min-width: 0; }
+
+.topbar {
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 28px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.topbar-title { font-size: 18px; font-weight: 700; color: #1c2b3a; }
+.topbar-sub { font-size: 12.5px; color: #8a94a6; }
+.topbar-right { display: flex; align-items: center; gap: 18px; color: #5d6b82; font-size: 14px; }
+
+.content-pad { padding: 24px 28px; }
+
+/* ---------------- KPI CARDS ---------------- */
+.kpi-row { display: flex; gap: 18px; margin-bottom: 20px; flex-wrap: wrap; }
+.kpi-card {
+  flex: 1;
+  min-width: 220px;
+  border-radius: 10px;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+.kpi-main { flex: 1; padding: 18px 20px; }
+.kpi-icon {
+  width: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  background: rgba(255,255,255,0.18);
+}
+.kpi-label { font-size: 11.5px; letter-spacing: .04em; text-transform: uppercase; opacity: .9; }
+.kpi-value { font-size: 26px; font-weight: 700; margin: 4px 0; }
+.kpi-delta { font-size: 12px; opacity: .95; }
+.kpi-delta .badge { background: rgba(255,255,255,0.25); padding: 1px 6px; border-radius: 4px; margin-right: 6px; }
+
+.kpi-pink   { background: linear-gradient(135deg, #ff4f81, #ff8aa8); }
+.kpi-purple { background: linear-gradient(135deg, #7b6ef6, #a99af9); }
+.kpi-blue   { background: linear-gradient(135deg, #2196f3, #64c5f5); }
+.kpi-teal   { background: linear-gradient(135deg, #2bc9b6, #6fe0d2); }
+
+/* ---------------- PANELS ---------------- */
+.panel {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  padding: 18px 20px;
+  margin-bottom: 20px;
+}
+.panel-title { font-size: 15px; font-weight: 700; color: #1c2b3a; margin-bottom: 4px; }
+.panel-row { display: flex; gap: 18px; }
+.panel-row .panel { flex: 1; }
+
+.insight-row { display: flex; gap: 32px; flex-wrap: wrap; }
+.insight-item { font-size: 14px; color: #4a5568; }
+.insight-item b { color: #1c2b3a; }
+
+/* form controls inside ML predictor */
+.field-label { font-size: 12.5px; color: #5d6b82; font-weight: 600; margin-bottom: 4px; display:block; }
+.predict-btn {
+  background: linear-gradient(135deg, #2196f3, #4cc9c0);
+  color: #fff; border: none; padding: 10px 22px; border-radius: 6px;
+  font-weight: 600; cursor: pointer; font-size: 14px;
+}

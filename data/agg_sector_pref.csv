@@ -1,0 +1,9 @@
+Sector,Payment_Group,Count
+Entertainment,Card/Bank Payment,72
+Entertainment,Mobile/Digital Payment,287
+Government Services,Card/Bank Payment,674
+Government Services,Mobile/Digital Payment,2645
+Retail,Card/Bank Payment,1117
+Retail,Mobile/Digital Payment,4695
+Telecom,Card/Bank Payment,104
+Telecom,Mobile/Digital Payment,463

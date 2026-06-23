@@ -1,0 +1,9 @@
+Customer_Segment,Payment_Group,Count
+High,Card/Bank Payment,304
+High,Mobile/Digital Payment,1170
+Low,Card/Bank Payment,985
+Low,Mobile/Digital Payment,4050
+Medium,Card/Bank Payment,659
+Medium,Mobile/Digital Payment,2819
+Unknown,Card/Bank Payment,19
+Unknown,Mobile/Digital Payment,51

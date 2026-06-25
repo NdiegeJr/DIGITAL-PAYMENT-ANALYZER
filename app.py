@@ -157,7 +157,7 @@ def kpi_card(icon, label, value, delta, css_class):
 
 kpi_row = html.Div([
     kpi_card("fa-chart-line", "Total Transactions", f"{total_tx:,}", tx_delta, "kpi-pink"),
-    kpi_card("fa-sterling-sign", "Total Value", f"£{total_val/1_000_000:.2f}M", val_delta, "kpi-purple"),
+    kpi_card("fa-sterling-sign", "Total Value", f"{total_val/1_000_000:.2f}M", val_delta, "kpi-purple"),
     kpi_card("fa-circle-check", "Avg Success Rate", f"{avg_success*100:.1f}%", 0.0, "kpi-blue"),
     kpi_card("fa-mobile-screen", "Mobile/Digital Share", f"{mobile_share*100:.1f}%", 0.0, "kpi-teal"),
 ], className="kpi-row")

@@ -157,7 +157,7 @@ def kpi_card(icon, label, value, delta, css_class):
 
 kpi_row = html.Div([
     kpi_card("fa-chart-line", "Total Transactions", f"{total_tx:,}", tx_delta, "kpi-pink"),
-    kpi_card("fa-sterling-sign", "Total Value", f"TSH{total_val/1_000_000:.2f}M", val_delta, "kpi-purple"),
+    kpi_card("fa-sterling-sign", "Total Value", f"{total_val/1_000_000:.2f}M", val_delta, "kpi-purple"),
     kpi_card("fa-circle-check", "Avg Success Rate", f"{avg_success*100:.1f}%", 0.0, "kpi-blue"),
     kpi_card("fa-mobile-screen", "Mobile/Digital Share", f"{mobile_share*100:.1f}%", 0.0, "kpi-teal"),
 ], className="kpi-row")
@@ -340,12 +340,12 @@ topbar = html.Div([
         html.Div("Digital Payments Trend Analyzer", className="topbar-title"),
         html.Div("Transaction analysis · seasonality · forecasting · channel preference", className="topbar-sub"),
     ]),
-    # html.Div([
-    #     html.I(className="fa-regular fa-bell"),
-    #     html.I(className="fa-regular fa-envelope"),
-    #     html.I(className="fa-solid fa-gear"),
-    #     html.Span("Thomson", style={"fontWeight": "600", "color": "#1c2b3a"}),
-    # ], className="topbar-right"),
+    html.Div([
+        html.I(className="fa-regular fa-bell"),
+        html.I(className="fa-regular fa-envelope"),
+        html.I(className="fa-solid fa-gear"),
+        html.Span("Thomson", style={"fontWeight": "600", "color": "#1c2b3a"}),
+    ], className="topbar-right"),
 ], className="topbar")
 
 app.layout = html.Div([

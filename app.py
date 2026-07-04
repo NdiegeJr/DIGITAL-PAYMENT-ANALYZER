@@ -1,14 +1,8 @@
 """
-app.py
-======
-Digital Payments Trend Analyzer — Dash dashboard (Velonic-style light admin theme).
 
-Run from PyCharm: right-click app.py -> Run 'app'
-Or from terminal:  python app.py
+Run from terminal:  python app.py
 Then open http://127.0.0.1:8050 in your browser.
 
-IMPORTANT: run `python train_models.py` once first so the models/ and
-data/agg_*.csv files this app reads actually exist.
 """
 
 import os
@@ -23,9 +17,9 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, "data")
 MODELS_DIR = os.path.join(BASE_DIR, "models")
 
-# ---------------------------------------------------------------------------
+
 # LOAD PRE-COMPUTED DATA (built by train_models.py)
-# ---------------------------------------------------------------------------
+
 def _read(name):
     path = os.path.join(DATA_DIR, name)
     if not os.path.exists(path):
@@ -78,9 +72,9 @@ def style_fig(fig, **kwargs):
     return fig
 
 
-# ---------------------------------------------------------------------------
+
 # FORECAST HELPER — recursively predicts the next N months
-# ---------------------------------------------------------------------------
+
 def forecast_future(n_months=6):
     hist = forecast_history.copy()
     last_t = hist["t"].iloc[-1]
@@ -103,9 +97,9 @@ def forecast_future(n_months=6):
     return pd.DataFrame(rows)
 
 
-# ---------------------------------------------------------------------------
+
 # APP SETUP
-# ---------------------------------------------------------------------------
+
 app = Dash(__name__)
 app.title = "Digital Payments Trend Analyzer"
 
@@ -170,9 +164,9 @@ def panel(title, children, extra_class=""):
     ], className=f"panel {extra_class}")
 
 
-# ---------------------------------------------------------------------------
+
 # TAB 1 — TRENDS
-# ---------------------------------------------------------------------------
+
 def trends_tab():
     fig_vol = px.line(monthly, x="MonthPeriod", y="Transaction_Count", markers=True,
                        title="Monthly Transaction Volume")
@@ -193,9 +187,9 @@ def trends_tab():
     ])
 
 
-# ---------------------------------------------------------------------------
+
 # TAB 2 — PEAK SEASONS
-# ---------------------------------------------------------------------------
+
 def peak_tab():
     monthly2 = monthly.copy()
     monthly2["month_num"] = pd.PeriodIndex(monthly2["MonthPeriod"], freq="M").month
@@ -236,9 +230,9 @@ def peak_tab():
     ])
 
 
-# ---------------------------------------------------------------------------
+
 # TAB 3 — FORECAST
-# ---------------------------------------------------------------------------
+
 def forecast_tab():
     return html.Div([
         panel("Forecast Horizon", html.Div([
@@ -250,9 +244,9 @@ def forecast_tab():
     ])
 
 
-# ---------------------------------------------------------------------------
+
 # TAB 4 — CHANNEL / METHOD PREFERENCE
-# ---------------------------------------------------------------------------
+
 def preference_tab():
     fig_group = px.pie(group_monthly.groupby("Payment_Group")["Count"].sum().reset_index(),
                         names="Payment_Group", values="Count", hole=0.55,
@@ -285,9 +279,9 @@ def preference_tab():
     ])
 
 
-# ---------------------------------------------------------------------------
+
 # TAB 5 — ML PREDICTOR (live, interactive)
-# ---------------------------------------------------------------------------
+
 sectors = sorted(transactions["Sector"].unique())
 segments = sorted(transactions["Customer_Segment"].unique())
 devices = sorted(transactions["Device_Type"].unique())
@@ -314,9 +308,9 @@ def predictor_tab():
     ]))
 
 
-# ---------------------------------------------------------------------------
+
 # LAYOUT
-# ---------------------------------------------------------------------------
+
 NAV_ITEMS = [
     ("trends", "Trends"),
     ("peaks", "Peak Seasons"),

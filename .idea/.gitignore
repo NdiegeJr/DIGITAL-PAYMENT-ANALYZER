@@ -3,3 +3,9 @@
 /workspace.xml
 # Editor-based HTTP Client requests
 /httpRequests/
+__pycache__/
+*.pyc
+*.pyo
+.env
+.DS_Store
+*.ipynb_checkpoints/

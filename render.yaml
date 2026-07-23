@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: digital-payment-trend-analyzer
+    env: python
+    buildCommand: "pip install -r requirements.txt && python train_models.py"
+    startCommand: "gunicorn app:server --workers 1 --threads 2 --timeout 120"
+    plan: free
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0

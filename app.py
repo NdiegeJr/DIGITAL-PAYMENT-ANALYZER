@@ -1,10 +1,3 @@
-from flask import Flask
-
-app = Flask(__name__)
-
-@app.route("/")
-def home():
-    return "Digital Payment Trend Analyzer"
 
 import base64
 import io

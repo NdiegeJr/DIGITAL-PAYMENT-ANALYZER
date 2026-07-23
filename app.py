@@ -246,6 +246,7 @@ def build_overview_stats(df):
 # ---------------------------------------------------------------------------
 app = Dash(__name__, suppress_callback_exceptions=True)
 app.title = "Digital Payments Trend Analyzer"
+server = app.server   
 
 app.index_string = """
 <!DOCTYPE html>

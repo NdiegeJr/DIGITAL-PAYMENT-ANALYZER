@@ -2,7 +2,7 @@ services:
   - type: web
     name: digital-payment-trend-analyzer
     env: python
-    buildCommand: "pip install -r requirements.txt && python train_models.py"
+    buildCommand: "chmod +x render-build.sh && ./render-build.sh"
     startCommand: "gunicorn app:server --workers 1 --threads 2 --timeout 120"
     plan: free
     envVars:

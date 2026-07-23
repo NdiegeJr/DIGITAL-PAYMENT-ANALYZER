@@ -1,19 +1,10 @@
-"""
-app.py
-======
-Digital Payments Trend Analyzer — Dash dashboard (Velonic-style light admin theme).
+from flask import Flask
 
-Tabs:
-  1. Trends           — monthly volume & value charts
-  2. Peak Seasons     — seasonality by month / day / hour
-  3. Forecast         — RandomForest future volume prediction
-  4. Channel Preference — mobile vs bank analysis
-  5. ML Predictor     — live payment channel prediction form
-  6. Upload & Analyze — upload ANY csv and get instant analysis charts
+app = Flask(__name__)
 
-Run:  python app.py   then open http://127.0.0.1:8050
-Pre-requisite: python train_models.py  (once, to build models & aggregates)
-"""
+@app.route("/")
+def home():
+    return "Digital Payment Trend Analyzer"
 
 import base64
 import io
